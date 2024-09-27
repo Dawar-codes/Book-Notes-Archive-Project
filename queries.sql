@@ -13,7 +13,7 @@ INSERT INTO book
 VALUES (1, 'The Lord of the Rings', '9/10', 'J.R.R. Tolkien', 14625765, '21-09-2024', 'This book is very engaging and good. I would recommend it to all the people who like fantasy stories.')
 
 CREATE TABLE notes(
-	id INTEGER REFERENCES book(id),
+	id INTEGER REFERENCES book(id) ON DELETE CASCADE,
 	book_notes TEXT
 )
 
@@ -27,7 +27,7 @@ INSERT INTO notes (id, book_notes)
          Along the way, they face dark forces, treachery, and the temptation of power.
          This story is about friendship, courage, and the battle between good and evil.')
 
-/* for altering a constraint you have to remove the constraint first and then add again */
+/* for altering a constraint you have to remove the constraint first and then add again. Don"t do this unless required */
 alter table notes
 drop notes_id_fkey;
 
