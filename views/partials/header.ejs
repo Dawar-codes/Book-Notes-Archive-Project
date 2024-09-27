@@ -24,7 +24,7 @@
         <div>
             <form action="/searchList" method="POST">
                 <input id="searchBox" type="text" name="getBookName" oninput="this.form.submit()"
-                    placeholder="Enter Book title , author or isbn">
+                   autocomplete="off" placeholder="Enter Book title , author or isbn">
             </form>
 
             <% if(locals.searchedBook) { %>

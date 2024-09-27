@@ -1,7 +1,7 @@
 
 
 document.addEventListener('click', function (event) {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === '/searchList') {
         const searchBox = document.getElementById('searchBox');
         const resultsList = document.querySelector('.drop-down-list');
 
