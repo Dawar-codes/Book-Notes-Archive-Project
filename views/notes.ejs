@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container-notes">
+        <h2>Add Notes for <%= book.title %>
+        </h2>
+
+        <div class="book-card-notes">
+            <img src="https://covers.openlibrary.org/b/id/<%= book.cover_id %>-L.jpg" alt="Book Cover"
+                class="book-cover-notes">
+            <div class="book-content-notes">
+                <h3 class="book-title-notes">
+                    <%= book.title %>
+                </h3>
+            </div>
+        </div>
+
+        <div class="book-note-notes">
+            <h1>Notes:</h1>
+            <p id="book-notes-para" style="white-space: pre-line">
+                <%= book.book_notes || "" %>
+            </p>
+        </div>
+
+
+
+
+
+        <!-- Edit notes button -->
+
+        <form action="/edit" method="POST">
+            
+            <input type="hidden" name="id" value="<%=book.id%>">
+
+            <button id="edit<%=book.id%>" class="edit-notes-btn" onclick="handler('<%=book.id%>')">Edit Notes</button>
+ 
+        
+
+             <textarea id="input<%=book.id%>" name="updatedNotes" class="edit-notes-input"
+                 rows="4" cols="50" autocomplete="off" hidden="true"><%= book.book_notes || "" %></textarea>
+
+             <button id="done<%=book.id%>" class="done-notes-btn" type="submit" hidden>Confirm</button>
+
+        </form>
+
+
+    </div>
+
+    <%- include('partials/footer.ejs') %>

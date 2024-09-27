@@ -1,0 +1,548 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.788);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ---------------------------------NAVBAR------------------------------------------- */
+
+.logo{
+    display: flex;
+    padding: 1rem;
+}
+.navHead{
+    background: rgb(134, 31, 52);                    /* navbar colour */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    padding: 0 1rem ;
+    padding-right: 2rem;
+}
+.navHead>div>img{
+    height: 2.5rem;
+    width: auto;
+}
+.navHead>a{
+    color: burlywood;
+    font-size: 1rem;
+    margin-left: 1rem;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+}
+.logo>h1{
+    color: burlywood;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+span{
+    color: cornflowerblue;
+}
+#searchBox{
+    padding: 0.5rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    width: 13rem;
+    outline: none;
+    border: none;
+    font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+    /* Stack logo and search box vertically for smaller screens */
+    .navHead {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .navHead>a{
+        margin-bottom: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 0.1rem;
+    }
+
+    #searchBox {
+        width: 100%; /* Full width search box on small screens */
+        align-self: center;
+    }
+}
+
+
+
+/* ------------------------------------------------------Main page------------------------------------------------------ */
+
+.main-heading-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    align-self: center;
+    padding: 20px; 
+    background: transparent; 
+}
+
+.main-title-main {
+    font-size: 3rem;
+    text-align: center;
+    color: #6c78d9;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); 
+    font-weight: bold; 
+}
+
+.main-para-main {
+    color: white;
+    text-align: center;
+    font-size: 1.25rem; 
+    line-height: 1.5; 
+    margin-top: 10px; 
+}
+
+.searchInside{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.searchInside input{
+    max-width: 15rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.5rem;
+}
+
+#search-button{
+    max-width: 5rem;
+    font-size: small;
+    padding: 0.5rem;
+}
+
+/* Centering container */
+.container {
+    display: flex;
+    justify-content: center;  
+}
+
+/* Card styling */
+.book-card-main {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.788);
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    max-width: 800px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 1rem;
+}
+
+.book-cover {
+    height: 16.5rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.book-content {
+    flex: 1;
+}
+
+.book-title-main {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #6c78d9;
+    margin-bottom: 0.5rem;
+}
+
+.book-author-main{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.book-date {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #bbb;
+}
+
+.book-description-main {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.book-description-main > span {
+    font-weight: 900;
+    color: #6c78d9;
+}
+
+.book-links a {
+    color: #6c78d9;
+    text-decoration: none;
+}
+
+.book-links a:hover {
+    text-decoration: underline;
+}
+
+.book-edit-delete-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button-main {
+    background-color: rgb(134, 31, 52); 
+    max-width: 10rem;
+    color: white;
+    border: none;
+    border-radius: 4px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.edit-button-main:hover {
+    background-color: rgb(148, 78, 92); 
+}
+
+.dlt-button-main {
+    background-color: rgb(134, 31, 52); 
+    max-width: 10rem;
+    color: white;
+    border: none;
+    border-radius: 4px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.dlt-button-main:hover {
+    background-color: rgb(255, 0, 0); 
+}
+
+
+
+footer {
+    margin-top: auto;
+    padding: 1rem;
+    color: burlywood;
+    font-size: small;
+    text-align: center;
+  }
+  
+  /* ----------------------------------------------Search List------------------------------------------------- */
+
+  .drop-down-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background matching the body */
+    border: 1px solid #555; /* Darker border to match the theme */
+    max-height: 500px;
+    max-width: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+.book-card-search {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #555; /* Darker border */
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.85); /* Matching dark theme */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.book-card-search:hover {
+    background-color: rgba(134, 31, 52, 0.9); /* Dark red hover effect */
+    transform: scale(1.02); /* Slight zoom-in effect */
+}
+
+.book-card-search img {
+    height: 4rem;
+    margin-right: 0.6rem;
+    border-radius: 5px;
+}
+
+.book-title-search {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: burlywood; /* Text color matching body */
+    flex-grow: 1;
+}
+
+.book-author-search,
+.book-isbn {
+    font-size: 0.8rem;
+    color: #bbb; /* Lighter gray for better readability */
+}
+
+.book-card-search:hover .book-title-search,
+.book-card-search:hover .book-author-search,
+.book-card-search:hover .book-isbn {
+    color: #fff; /* Lighten text on hover */
+}
+
+
+/* --------------------------------------------addBook section------------------------------------------------ */
+
+
+/* General container styling */
+.container-add {
+    color: burlywood;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.788);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for the review section */
+.container-add h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: burlywood;
+}
+
+/* Book card styling */
+.book-card-add {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #121212;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Book cover image */
+.book-cover-add {
+    height: 10rem;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Book content styling */
+.book-content-add {
+    flex-grow: 1;
+}
+
+/* Title of the book */
+.book-title-add {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: burlywood;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.form-add>input[type="text"],
+textarea {
+    padding: 10px;
+    font-size: 1rem;
+    color: burlywood;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #1b1b1b
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #861f34;
+    color: burlywood;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  
+}
+
+button[type="submit"]:hover {
+    background-color: #964d5c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container-add {
+        width: 90%;
+    }
+
+    .book-card-add {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-cover-add {
+        margin-bottom: 15px;
+    }
+
+    .book-title-add {
+        font-size: 1.3rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------Notes Section------------------------------------------------- */
+
+.container-notes {
+    background-color: #121212;
+    color: #e0a96d;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 15rem;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.book-card-notes {
+    display: flex;
+    align-items: center;
+    background-color: #1b1b1b;
+    border: 1px solid #3e3e3e;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.book-cover-notes {
+    width: auto;
+    height: 8rem;
+    margin-right: 15px;
+    border: 1px solid #3e3e3e;
+    border-radius: 5px;
+}
+
+.book-content-notes {
+    flex-grow: 1;
+}
+
+.book-title-notes {
+    font-size: 20px;
+    color: #f3c674;
+}
+
+.book-note-notes {
+    margin-top: 20px;
+}
+
+.book-note-notes h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f3c674;
+}
+
+.book-note-notes p {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #1b1b1b;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #3e3e3e;
+}
+
+.edit-notes-input{
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #1b1b1b;
+    padding: 10px;
+    width: 95.5%;
+    color: burlywood;
+    border-radius: 5px;
+    border: 1px solid #3e3e3e;
+    margin-bottom: 1rem;
+}
+
+.edit-notes-btn,
+.done-notes-btn{
+    background-color: rgb(134, 31, 52); 
+    max-width: 10rem;
+    color: white;
+    border: none;
+    border-radius: 4px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.edit-notes-btn:hover,
+.done-notes-btn:hover{
+    background-color: rgb(148, 78, 92); 
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .container-notes {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .book-cover-notes {
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .book-title-notes {
+        font-size: 18px;
+    }
+
+    .book-note-notes h1 {
+        font-size: 20px;
+    }
+
+    .book-note-notes p {
+        font-size: 14px;
+    }
+
+    .book-notes-input{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Book notes By Dawar</title>
+</head>
+
+<body>
+
+    <nav class="navHead">
+
+        <div class="logo">
+            <img src="/assets/icons/notebook.png" alt="notebook icon">
+            <h1>BookNotes <span>Archive</span></h1>
+        </div>
+
+        <a href="/">Home</a>
+
+       
+        <div>
+            <form action="/searchList" method="POST">
+                <input id="searchBox" type="text" name="getBookName" oninput="this.form.submit()"
+                    placeholder="Enter Book title , author or isbn">
+            </form>
+
+            <% if(locals.searchedBook) { %>
+            <% if (searchedBook && searchedBook.length> 0) { %>
+                <ul class="drop-down-list">
+                    <% searchedBook.forEach((book)=> { %>
+                        <li>
+                            <a class="book-card-search" href="/addBook?title=<%= encodeURIComponent(book.title) %>&cover=<%= encodeURIComponent(book.cover_i) %>&author=<%= encodeURIComponent(book.author_name) %>">
+
+                            <img class="book-cover-search" src="https://covers.openlibrary.org/b/id/<%= book.cover_i%>-S.jpg"
+                                alt="book cover">
+                            <div class="book-info">
+
+                                <p class="book-title-search"><%= book.title %></p>
+                                <p class="book-author-search">Author: <%= book.author_name ? book.author_name[0] : "Unknown" %></p>
+                                <p class="book-isbn">ISBN: <%= book.isbn ? book.isbn[0] : "Not available" %></p>
+
+                            </div>
+                        </a>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } else if(searchTerm){ %>
+                    <p>No results found for <%= searchTerm %>, please try again.</p>
+                <% } %>
+        </div>
+
+        <% } %>
+
+
+
+    </nav>

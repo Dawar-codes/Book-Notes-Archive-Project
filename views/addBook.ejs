@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container-add">
+    <h2>Add Review for <%= title %></h2>
+    
+    <div class="book-card-add">
+        <img src="https://covers.openlibrary.org/b/id/<%= cover %>-L.jpg" alt="Book Cover" class="book-cover-add">
+        <div class="book-content-add">
+            <h3 class="book-title-add"><%= title %> BY <%= author %></h3>
+        </div>
+    </div>
+
+    <form class="form-add" action="/addBook" method="POST">
+        <input type="hidden" name="title" value="<%= title %>">
+        <input type="hidden" name="cover" value="<%= cover %>">
+        <input type="hidden" name="author" value="<%= author %>">
+        
+        <label for="rating">Rating (e.g., 8/10):</label>
+        <input type="text" name="rating" id="rating" required>
+
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="date" required>
+        
+        <label for="review">Review:</label>
+        <textarea name="review" id="review" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,45 @@
+
+<%- include('partials/header.ejs') %>
+
+<div class="main-heading-container">
+    <h1 class="main-title-main">Books I've Read</h1>
+    <h2 class="main-para-main">Welcome to my collection of book notes! Here, you’ll find my reviews along with detailed notes for each book I've read.</h2>
+    <form action="/searchInside" method="get" class="searchInside">
+        <input type="text" name="title" placeholder="Enter Book Title">
+        <button type="submit" id="search-button">Search</button>
+    </form>
+</div>
+
+<% if (locals.books) { %>
+    <% console.log(books); %>
+    <% for(let book of books){%>
+        <%- console.log(book.id) %> 
+    <div class="container">
+        <div class="book-card-main">
+            <img src="https://covers.openlibrary.org/b/id/<%= book.cover_id%>-M.jpg" alt="Book Cover" class="book-cover">
+            <div class="book-content">
+                <h2 class="book-title-main">
+                    <%= book.title %> </br> <span class="book-author-main">By <%= book.author%></span>
+                </h2>
+                <p class="book-date">Date read: <%= book.date_added %>.</br> How strongly I recommend it: <%= book.rating %></p>
+                <p class="book-description-main">
+                    <span>My Reviews:</span> </br> <%= book.review %>
+                </p>
+                
+    
+                <!-- Read Notes button -->
+            <div class="book-edit-delete-btn">
+                <a class="edit-button-main" href="/notes/<%= book.id %>">Read Notes</a> 
+
+                <form action="/delete/book/<%= book.id %>" method="POST">
+                    <button class="dlt-button-main">Delete</button>
+                </form>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+
+    <%- include('partials/footer.ejs') %>
