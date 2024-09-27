@@ -66,6 +66,7 @@ PORT=3000
 ```bash
 psql -U your_db_user -d your_database -f schema.sql
 ```
+If that does'nt work, open the queries.sql file and run those queries in Postgres. and then move forward to the next step below.
 
 6. Start the application:
 
