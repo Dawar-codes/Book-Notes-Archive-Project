@@ -23,6 +23,8 @@ body {
     min-height: 10vh;
     padding: 0 1rem ;
     padding-right: 2rem;
+    position: sticky;
+    top: 0;
 }
 .navHead>div>img{
     height: 2.5rem;
