@@ -1,4 +1,15 @@
 
+let timer;
+    
+document.getElementById('searchBox').addEventListener('input', function() {
+    clearTimeout(timer); // Clear the previous timer
+    
+    // Set a new timer for 2 seconds (1000 milliseconds)
+    timer = setTimeout(() => {
+        this.form.submit(); 
+    }, 1000);
+});
+
 
 document.addEventListener('click', function (event) {
     if (window.location.pathname === '/searchList') {
