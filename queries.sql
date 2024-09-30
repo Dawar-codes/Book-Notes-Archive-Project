@@ -1,4 +1,4 @@
-CREATE TABLE n_book(
+CREATE TABLE book(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(150),
 	author VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE notes(
 )
 
 INSERT INTO notes (id, book_notes)
-(1, 'In J.R.R. Tolkien''s epic tale, Frodo Baggins, a humble hobbit,
+VALUES (1, 'In J.R.R. Tolkien''s epic tale, Frodo Baggins, a humble hobbit,
          inherits the One Ring, a powerful artifact that could enslave Middle-earth.
 
          With the help of his friends and allies, Frodo sets out on a perilous journey
