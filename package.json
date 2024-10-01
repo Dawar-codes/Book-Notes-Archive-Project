@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
     
   },
   "author": "Muhammad Dawar",
@@ -19,5 +20,8 @@
     "ejs": "^3.1.10",
     "express": "^4.21.0",
     "pg": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=14.x" 
   }
 }
