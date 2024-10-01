@@ -20,7 +20,13 @@ const db = new pg.Client({
   // port: process.env.DB_PORT || 5432, // Use 5432 as a default if not set
 });
 
-db.connect();
+db.connect()
+  .then(() => {
+    console.log("Connected to the database");
+  })
+  .catch((err) => {
+    console.error("Database connection error:", err);
+  });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
